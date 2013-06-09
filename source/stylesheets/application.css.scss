@@ -1,2 +1,106 @@
 @import "compass/reset";
 @import "compass";
+@import "susy";
+
+// ==============
+// = Typography =
+// ==============
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:700|Open+Sans:400italic,400,700);
+
+html, body {
+  font-family : 'Open Sans', sans-serif;
+  font-weight : normal;
+  font-size   : 14px;
+  line-height : 22px;
+  color       : #2b2b2b;
+  -webkit-font-smoothing : antialiased;
+
+  strong { font-weight : bold; }
+  em     { font-style  : italic; }
+  p      { margin-bottom : 22px; }
+}
+h1, h2, h3 {
+  font-family    : 'Oswald', sans-serif;
+  font-weight    : bold;
+  text-transform : uppercase;
+}
+h1 { font-size : 50px; line-height : 65px; }
+h2 { font-size : 40px; line-height : 65px; }
+h3 { font-size : 28px; line-height : 42px; }
+
+// ==========
+// = Lockup =
+// ==========
+
+aside img {
+  width         : 128px;
+  height        : 128px;
+  border        : 8px solid #fff;
+  display       : block;
+  margin        : auto;
+  margin-bottom : 25px;
+  @include border-radius( 72px );
+  @include box-shadow( rgba( #000, 0.7 ) 0 1px 6px );
+}
+
+// ========
+// = Grid =
+// ========
+
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 2em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+
+body  { padding : 50px; }
+body  { @include container; }
+#main { @include span-columns( 10 ); }
+aside { @include span-columns( 2 omega ); }
+
+.post         { clear : both; }
+.post time    { @include span-columns( 1 ); }
+.post article { @include span-columns( 11 omega ); }
+
+// ========
+// = Date =
+// ========
+
+time {
+  $border-radius : 5px;
+  $header-color  : #3a71bc;
+
+  margin-top : 14px;
+  @include border-radius( $border-radius );
+  @include box-shadow( rgba( #000, 0.1 ) 0 2px 5px );
+
+  sup, sub {
+    font-family    : 'Oswald', sans-serif;
+    font-weight    : bold;
+    display        : block;
+    text-align     : center;
+    border         : 1px solid #a0a0a0;
+    text-transform : uppercase;
+  }
+  sup {
+    background    : $header-color;
+    font-size     : 12px;
+    line-height   : 22px;
+    color         : #fff;
+    border-bottom : none;
+    @include background( linear-gradient(
+      lighten( $header-color, 5% ) 0%, darken( $header-color, 9% ) 100% ) );
+    @include text-shadow( #000 0 1px 1px );
+    @include border-top-radius( $border-radius );
+    @include box-shadow( rgba( #fff, 0.6 ) 0 1px 1px inset );
+  }
+  sub {
+    background  : #fff;
+    font-size   : 26px;
+    line-height : 36px;
+    color       : #525252;
+    border-top  : none;
+    @include background( linear-gradient( #fff 0%, #f9f9f9 100% ) );
+    @include border-bottom-radius( $border-radius );
+  }
+}

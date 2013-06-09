@@ -4,7 +4,17 @@
     %meta{ :charset => 'utf-8' }
     %meta{ :content => 'IE=edge,chrome=1', :'http-equiv' => 'X-UA-Compatible' }
     %title {Title}
-    = stylesheet_link_tag    'application'
+    = inline_stylesheet 'application'
+    = # inline_javascript 'application'
     = javascript_include_tag 'application'
   %body
-    = yield
+    #main{ :role => 'main' }= yield
+
+    %aside
+      = image_tag 'profile.jpg'
+      %p
+        %strong Sup? I'm Jeremy.
+      %p
+        I make marvelous shit for your internet.
+      %p
+        The views here are solely my own and do not necessarily reflect the views of my employer.
