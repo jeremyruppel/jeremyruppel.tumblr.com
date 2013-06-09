@@ -65,21 +65,21 @@ aside img {
 // = Grid =
 // ========
 
-$total-columns  : 12;             // a 12-column grid
-$column-width   : 4em;            // each column is 4em wide
-$gutter-width   : 2em;            // 1em gutters between columns
+$total-columns  : 8;             // a 12-column grid
+$column-width   : 6em;            // each column is 4em wide
+$gutter-width   : 3em;            // 1em gutters between columns
 $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 
 body  { padding : 50px; }
 body  { @include container; }
-#main { @include span-columns( 10 ); }
+#main { @include span-columns( 6 ); }
 aside { @include span-columns( 2 omega ); }
 
 .post         { clear : both; }
-.post hgroup  { @include span-columns( 11 omega ); }
+.post hgroup  { @include span-columns( 7 omega ); }
 .post time    { clear : both; }
 .post time    { @include span-columns( 1 ); }
-.post article { @include span-columns( 11 omega ); }
+.post article { @include span-columns( 7 omega ); }
 
 // ===========
 // = Article =
