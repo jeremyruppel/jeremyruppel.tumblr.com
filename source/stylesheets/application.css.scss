@@ -59,6 +59,8 @@ body  { @include container; }
 aside { @include span-columns( 2 omega ); }
 
 .post         { clear : both; }
+.post hgroup  { @include span-columns( 11 omega ); }
+.post time    { clear : both; }
 .post time    { @include span-columns( 1 ); }
 .post article { @include span-columns( 11 omega ); }
 
@@ -70,7 +72,7 @@ time {
   $border-radius : 5px;
   $header-color  : #3a71bc;
 
-  margin-top : 14px;
+  margin-top : 6px;
   @include border-radius( $border-radius );
   @include box-shadow( rgba( #000, 0.1 ) 0 2px 5px );
 
@@ -89,7 +91,9 @@ time {
     color         : #fff;
     border-bottom : none;
     @include background( linear-gradient(
-      lighten( $header-color, 5% ) 0%, darken( $header-color, 9% ) 100% ) );
+      lighten( $header-color, 5% ) 0%,
+       darken( $header-color, 9% ) 100%
+    ) );
     @include text-shadow( #000 0 1px 1px );
     @include border-top-radius( $border-radius );
     @include box-shadow( rgba( #fff, 0.6 ) 0 1px 1px inset );
@@ -102,5 +106,29 @@ time {
     border-top  : none;
     @include background( linear-gradient( #fff 0%, #f9f9f9 100% ) );
     @include border-bottom-radius( $border-radius );
+  }
+}
+
+// ===============
+// = Post Footer =
+// ===============
+
+article { margin-bottom : 50px; }
+article footer {
+
+  font-size  : 12px;
+  border     : 1px solid #f3f3f3;
+  padding    : 4px 10px;
+  background : #fafafa;
+  color      : #bababa;
+  @include border-radius( 5px );
+
+  span {
+    vertical-align : middle;
+    margin-right   : 10px;
+  }
+  ul {
+    @include inline-block;
+    @include inline-block-list( 5px );
   }
 }
