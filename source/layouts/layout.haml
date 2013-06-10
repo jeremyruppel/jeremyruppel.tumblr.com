@@ -5,8 +5,7 @@
     %meta{ :content => 'IE=edge,chrome=1', :'http-equiv' => 'X-UA-Compatible' }
     %title {Title}
     = inline_stylesheet 'application'
-    = # inline_javascript 'application'
-    = javascript_include_tag 'application'
+    = inline_javascript 'application'
   %body
     #main{ :role => 'main' }= yield
 

@@ -1,0 +1,47 @@
+@import "compass";
+@import "variables";
+
+// ============
+// = Calendar =
+// ============
+
+time {
+  $border-radius : 5px;
+  $header-color  : $primary-color;
+
+  margin-top : 6px;
+  @include border-radius( $border-radius );
+  @include box-shadow( rgba( #000, 0.1 ) 0 2px 5px );
+
+  sup, sub {
+    font-family    : $title-font;
+    font-weight    : bold;
+    display        : block;
+    text-align     : center;
+    border         : 1px solid #a0a0a0;
+    text-transform : uppercase;
+  }
+  sup {
+    background    : $header-color;
+    font-size     : 12px;
+    line-height   : 22px;
+    color         : #fff;
+    border-bottom : none;
+    @include background( linear-gradient(
+      lighten( $header-color, 5% ) 0%,
+       darken( $header-color, 9% ) 100%
+    ) );
+    @include text-shadow( #000 0 1px 1px );
+    @include border-top-radius( $border-radius );
+    @include box-shadow( rgba( #fff, 0.6 ) 0 1px 1px inset );
+  }
+  sub {
+    background  : #fff;
+    font-size   : 26px;
+    line-height : 36px;
+    color       : #525252;
+    border-top  : none;
+    @include background( linear-gradient( #fff 0%, #f9f9f9 100% ) );
+    @include border-bottom-radius( $border-radius );
+  }
+}
