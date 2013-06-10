@@ -7,7 +7,13 @@
     = inline_stylesheet 'application'
     = inline_javascript 'application'
   %body
-    #main{ :role => 'main' }= yield
+    #main{ :role => 'main' }
+      = yield
+
+      %footer
+        :markdown
+          &copy; 2013 Jeremy Ruppel.
+          Powered by [Tumblr](https://www.tumblr.com).
 
     %aside
       = image_tag 'profile.jpg'

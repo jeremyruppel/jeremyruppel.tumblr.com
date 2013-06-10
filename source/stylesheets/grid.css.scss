@@ -22,3 +22,5 @@ aside { @include span-columns( 2 omega ); }
 .post article { @include span-columns( 7 omega ); }
 .post footer  { @include span-columns( 7 omega ); }
 .post footer  { clear : both; }
+#main footer  { @include span-columns( 7 omega ); }
+#main footer  { clear : both; }
