@@ -5,10 +5,10 @@
 // = Grid =
 // ========
 
-$total-columns  : 8;             // a 12-column grid
-$column-width   : 6em;           // each column is 4em wide
-$gutter-width   : 3em;           // 1em gutters between columns
-$grid-padding   : $gutter-width; // grid-padding equal to gutters
+$total-columns  : 8;
+$column-width   : 6em;
+$gutter-width   : 3em;
+$grid-padding   : $gutter-width;
 
 body  { padding : 50px; }
 body  { @include container; }
@@ -24,3 +24,24 @@ aside { @include span-columns( 2 omega ); }
 .post footer  { clear : both; }
 #main footer  { @include span-columns( 7 omega ); }
 #main footer  { clear : both; }
+
+// =================
+// = Mobile layout =
+// =================
+
+@include at-breakpoint( 1 40em ) {
+  $total-columns  : 1;
+  $column-width   : 40em;
+
+  body  { padding : 20px; }
+  body  { @include container( 1 ); }
+  #main { @include span-columns( 1 ); }
+  aside { @include span-columns( 1 ); }
+
+  .post         { clear : both; @include clearfix; }
+  .post hgroup  { @include span-columns( 1 omega ); }
+  .post time    { display : none; }
+  .post article { @include span-columns( 1 ); }
+  .post footer  { @include span-columns( 1 ); }
+  #main footer  { @include span-columns( 1 ); }
+}
