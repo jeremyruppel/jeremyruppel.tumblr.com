@@ -1,3 +1,4 @@
+@import "compass";
 @import "susy";
 
 // ========
@@ -14,8 +15,10 @@ body  { @include container; }
 #main { @include span-columns( 6 ); }
 aside { @include span-columns( 2 omega ); }
 
-.post         { clear : both; }
+.post         { clear : both; @include clearfix; }
 .post hgroup  { @include span-columns( 7 omega ); }
 .post time    { clear : both; }
 .post time    { @include span-columns( 1 ); }
 .post article { @include span-columns( 7 omega ); }
+.post footer  { @include span-columns( 7 omega ); }
+.post footer  { clear : both; }

@@ -7,27 +7,40 @@
 // = Post =
 // ========
 
-article {
+.post {
   margin-bottom : 50px;
-}
-article footer {
-  font-family    : $body-font;
-  font-weight    : normal;
-  font-size      : 12px;
-  line-height    : 16px;
-  text-transform : none;
-  padding        : 4px 12px;
-  padding-top    : 15px;
-  border-top     : 1px solid lighten( $black-color, 20% );
-  color          : $black-color;
 
-  span {
-    vertical-align : middle;
-    margin-right   : 10px;
-    font-weight    : bold;
+  /**
+   * The post footer.
+   */
+  footer {
+    font-family    : $body-font;
+    font-weight    : normal;
+    font-size      : 12px;
+    line-height    : 16px;
+    text-transform : none;
+    padding        : 4px 12px;
+    padding-top    : 15px;
+    border-top     : 1px solid lighten( $black-color, 20% );
+    color          : $black-color;
+
+    i {
+      margin-right : 3px;
+    }
+    ul {
+      @include inline-block-list( 5px );
+      display      : inline;
+      margin-right : 15px;
+    }
   }
-  ul {
-    @include inline-block;
-    @include inline-block-list( 5px );
+
+  /**
+   * Text posts
+   */
+  &.text article {
+    img {
+      max-width : 100%;
+      height : auto;
+    }
   }
 }
