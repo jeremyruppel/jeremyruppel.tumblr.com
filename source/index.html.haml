@@ -2,4 +2,5 @@
 ---
 
 %ol
-  = partial 'posts/post', :locals => { :type => 'text' }
+  = block :posts do
+    = partial 'posts/post', :locals => { :type => 'text' }
