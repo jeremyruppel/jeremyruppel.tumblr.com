@@ -6,7 +6,7 @@
 // =========
 
 $image-size  : 128px;
-$border-size : 12px;
+$border-size : 8px;
 
 aside {
 
@@ -31,8 +31,9 @@ aside {
     text-align : center;
 
     a {
-      padding : 6px;
-      @include link-color( #eaeaea );
+      padding     : 6px;
+      line-height : 40px;
+      @include link-color( $black-color );
     }
   }
 }

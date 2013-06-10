@@ -17,16 +17,24 @@
 
     %aside
       = image_tag 'profile.jpg'
-      %p
-        %strong Sup? I'm Jeremy.
-      %p
-        I make marvelous shit for your internet.
-      %p
-        The views here are solely my own and do not necessarily reflect the views of my employer.
+
+      :markdown
+        **I'm Jeremy Ruppel**. I make marvelous shit for your internet.
+        These are my thoughts, advices, ramblings, and references on
+        the world of software engineering and web development.
+
+        The views here are solely my own and do not necessarily reflect
+        the views of my employer.
+
       %nav
         = link_to 'https://github.com/jeremyruppel' do
-          %i.icon-3x.icon-github
+          %i.icon-2x.icon-github
         = link_to 'http://www.linkedin.com/in/jeremyruppel' do
-          %i.icon-3x.icon-linkedin-sign
+          %i.icon-2x.icon-linkedin-sign
         = link_to 'https://twitter.com/jeremyruppel' do
-          %i.icon-3x.icon-twitter
+          %i.icon-2x.icon-twitter
+        = link_to '{RSS}' do
+          %i.icon-2x.icon-rss
+        = link_to '/archive' do
+          %i.icon-2x.icon-th-large
+
