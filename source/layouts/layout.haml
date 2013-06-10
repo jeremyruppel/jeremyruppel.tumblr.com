@@ -6,6 +6,10 @@
     %meta{ :content => 'width=device-width, initial-scale=1', :name => 'viewport' }
 
     %meta{ :name => 'text:Author', :content => 'Jeremy Ruppel' }
+    %meta{ :name => 'text:Disclaimer', :content => 'The views here are solely my own and do not necessarily reflect the views of my employer.' }
+    %meta{ :name => 'text:Github Username', :content => 'jeremyruppel' }
+    %meta{ :name => 'text:Linkedin Username', :content => 'jeremyruppel' }
+    %meta{ :name => 'text:Twitter Username', :content => 'jeremyruppel' }
     %title {Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}
     = inline_stylesheet 'application'
     = inline_javascript 'application'
@@ -22,22 +26,21 @@
       %img{ :src => '{PortraitURL-128}', :alt => '{text:Author}' }
 
       :markdown
-        **I'm Jeremy Ruppel**. I make marvelous shit for your internet.
-        These are my thoughts, advices, ramblings, and references on
-        the world of software engineering and web development.
+        **I'm {text:Author}**. {Description}
 
-        The views here are solely my own and do not necessarily reflect
-        the views of my employer.
+        {text:Disclaimer}
 
       %nav
-        = link_to 'https://github.com/jeremyruppel' do
-          %i.icon-2x.icon-github
-        = link_to 'http://www.linkedin.com/in/jeremyruppel' do
-          %i.icon-2x.icon-linkedin-sign
-        = link_to 'https://twitter.com/jeremyruppel' do
-          %i.icon-2x.icon-twitter
+        = block :if_github_username do
+          = link_to 'https://github.com/{text:Github Username}' do
+            %i.icon-2x.icon-github
+        = block :if_linkedin_username do
+          = link_to 'http://www.linkedin.com/in/{text:Linkedin Username}' do
+            %i.icon-2x.icon-linkedin-sign
+        = block :if_twitter_username do
+          = link_to 'https://twitter.com/{text:Twitter Username}' do
+            %i.icon-2x.icon-twitter
         = link_to '{RSS}' do
           %i.icon-2x.icon-rss
         = link_to '/archive' do
           %i.icon-2x.icon-th-large
-
