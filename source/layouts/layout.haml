@@ -4,8 +4,6 @@
     %meta{ :charset => 'utf-8' }
     %meta{ :content => 'IE=edge,chrome=1', :'http-equiv' => 'X-UA-Compatible' }
     %meta{ :content => 'width=device-width, initial-scale=1', :name => 'viewport' }
-
-    %meta{ :name => 'text:Author', :content => 'Jeremy Ruppel' }
     %title {Title}{block:PostTitle} | {PostTitle}{/block:PostTitle}
     = inline_stylesheet 'application'
     = inline_javascript 'application'
@@ -15,14 +13,14 @@
 
       %footer
         :markdown
-          &copy; {CopyrightYears} {text:Author}.
+          &copy; {CopyrightYears} {Name}.
           Powered by [Tumblr](https://www.tumblr.com).
 
     %aside
-      %img{ :src => '{PortraitURL-128}', :alt => '{text:Author}' }
+      %img{ :src => '{PortraitURL-128}', :alt => '{Name}' }
 
       :markdown
-        **I'm Jeremy Ruppel**. I make marvelous shit for your internet.
+        **I'm {Name}**. I make marvelous shit for your internet.
         These are my thoughts, advices, ramblings, and references on
         the world of software engineering and web development.
 
