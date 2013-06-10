@@ -25,10 +25,16 @@ h1, h2, h3 {
 h1 { font-size : 50px; line-height : 65px; }
 h2 { font-size : 40px; line-height : 55px; margin-bottom : 15px; }
 h3 { font-size : 28px; line-height : 42px; }
+
+// =========
+// = Links =
+// =========
+
 a {
   @include unstyled-link;
-  @include link-colors( $primary-color, $light-primary-color );
+  @include link-color;
   @include transition-property( color );
   @include transition-duration( 0.2s );
+
+  h2 & { @include link-color( $black-color ); }
 }
-h2 a { color : $black-color; }

@@ -8,3 +8,16 @@ $primary-color       : #3a71bc;
 $light-primary-color : lighten( $primary-color, 10% );
 $title-font          : 'Oswald', sans-serif;
 $body-font           : 'Open Sans', sans-serif;
+
+// =========
+// = Mxins =
+// =========
+
+/**
+ * A simple mixin for DRYing up hover colors when there are several
+ * variations of links that have different starting colors, but
+ * the hover color should stay consistent.
+ */
+@mixin link-color( $color : $primary-color ) {
+  @include link-colors( $color, $light-primary-color );
+}
