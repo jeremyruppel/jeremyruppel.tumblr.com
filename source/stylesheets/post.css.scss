@@ -5,8 +5,35 @@
 // = Post =
 // ========
 
+$post-indent : 35px;
+
 .post {
   margin-bottom : 50px;
+
+  /**
+   * Post lists.
+   */
+  ul, ol { margin-left : $post-indent; }
+  ul { list-style : disc outside none; }
+  ol { list-style : decimal outside none; }
+
+  /**
+   * Post blockquotes.
+   */
+  blockquote {
+    margin-left : $post-indent;
+    font-style : italic;
+    &:before,
+    &:after  { font-family : $icon-font; }
+    &:before {
+      content      : "\f10d";
+      margin-right : 10px;
+    }
+    &:after {
+      content     : "\f10e";
+      margin-left : 10px;
+    }
+  }
 
   /**
    * The post footer.
