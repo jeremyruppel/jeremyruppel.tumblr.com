@@ -1,0 +1,22 @@
+%li.post{ :class => type }
+  = block :title do
+    %hgroup
+      %h2= link_to '{Title}', '{Permalink}'
+
+  = block :date do
+    %time{ :datetime => '{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}', :pubdate => true }
+      %sup {ShortMonth}
+      %sub {DayOfMonth}
+
+  = partial "posts/#{type}"
+
+  %footer
+    %i.icon-time
+    %ul
+      %li {TimeAgo}
+
+    = block :has_tags do
+      %i.icon-tags
+      %ul
+        = block :tags do
+          %li= link_to '#{Tag}', '{TagURL}'
