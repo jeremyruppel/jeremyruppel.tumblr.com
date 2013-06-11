@@ -30,6 +30,11 @@ end
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
+##
+# Ignore all stylesheets and javascripts besides `application`.
+ignore %r{(?<!application)\.css}
+ignore %r{(?<!application)\.js}
+
 ###
 # Helpers
 ###
