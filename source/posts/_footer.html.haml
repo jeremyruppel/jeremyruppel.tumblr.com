@@ -1,0 +1,10 @@
+%footer
+  %i.icon-time
+  %ul
+    %li {TimeAgo}
+
+  = block :has_tags do
+    %i.icon-tags
+    %ul
+      = block :tags do
+        %li= link_to '#{Tag}', '{TagURL}'
