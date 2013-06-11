@@ -20,9 +20,10 @@ $post-indent : 35px;
   /**
    * Post blockquotes.
    */
-  blockquote {
+  blockquote p {
     margin-left : $post-indent;
-    font-style : italic;
+    font-style  : italic;
+
     &:before,
     &:after  { font-family : $icon-font; }
     &:before {
