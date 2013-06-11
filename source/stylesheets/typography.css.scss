@@ -59,3 +59,14 @@ a {
 
   h2 & { @include link-color( $black-color ); }
 }
+
+/**
+ * Code
+ */
+code {
+  background : #f6f6f6;
+  border     : 1px solid #dfdfdf;
+  color      : $primary-color;
+  padding    : 2px 6px;
+  @include border-radius( 5px );
+}
