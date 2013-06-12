@@ -1,0 +1,51 @@
+@import "compass";
+@import "variables";
+
+// =========
+// = Notes =
+// =========
+
+$border-color : #dedede;
+
+ol.notes {
+  margin        : 14px 0;
+  border-bottom : 1px solid $border-color;
+  @include no-bullets;
+
+  li {
+    padding    : 12px 0;
+    border-top : 1px solid $border-color;
+  }
+
+  img.avatar, span.action {
+    vertical-align : middle;
+  }
+  img.avatar {
+    margin-bottom : 0;
+    margin-right : 6px;
+    @include border-radius( 3px );
+  }
+  blockquote {
+    margin-top    : 12px;
+    margin-left   : 22px;
+    margin-right  : 22px;
+    margin-bottom : 4px;
+    font-style    : italic;
+
+    a { @include link-color( $black-color ); }
+
+    &:before,
+    &:after  {
+      font-family : $icon-font;
+      color       : $border-color;
+    }
+    &:before {
+      content      : "\f10d";
+      margin-right : 4px;
+    }
+    &:after {
+      content     : "\f10e";
+      margin-left : 4px;
+    }
+  }
+}
